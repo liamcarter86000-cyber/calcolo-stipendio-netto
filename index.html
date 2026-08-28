@@ -1,0 +1,1387 @@
+<style>
+/* =========================================================
+   STIPENDIOCALCOLATORE.IT
+   Premium Article UI – Stipendio Netto 2026
+   ========================================================= */
+
+.sn-article {
+  --sn-primary: #2563eb;
+  --sn-primary-dark: #1d4ed8;
+  --sn-text: #172033;
+  --sn-muted: #64748b;
+  --sn-border: #e2e8f0;
+  --sn-bg: #f8fafc;
+  --sn-white: #ffffff;
+  --sn-green: #059669;
+  --sn-green-bg: #ecfdf5;
+  --sn-blue-bg: #eff6ff;
+  --sn-yellow-bg: #fffbeb;
+  --sn-radius: 16px;
+  --sn-shadow: 0 8px 30px rgba(15, 23, 42, .07);
+
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--sn-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.sn-article * {
+  box-sizing: border-box;
+}
+
+.sn-article h2 {
+  font-size: clamp(27px, 4vw, 34px);
+  line-height: 1.25;
+  margin: 52px 0 18px;
+  letter-spacing: -0.5px;
+  color: #0f172a;
+}
+
+.sn-article h3 {
+  font-size: clamp(21px, 3vw, 25px);
+  line-height: 1.35;
+  margin: 32px 0 12px;
+  color: #172033;
+}
+
+.sn-article p {
+  margin: 0 0 18px;
+}
+
+.sn-article strong {
+  color: #0f172a;
+}
+
+.sn-article a {
+  color: var(--sn-primary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+/* HERO */
+.sn-hero {
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 55%, #f0fdf4 100%);
+  border: 1px solid #dbeafe;
+  border-radius: 22px;
+  padding: 42px 38px;
+  margin-bottom: 30px;
+  box-shadow: var(--sn-shadow);
+}
+
+.sn-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  border-radius: 999px;
+  padding: 6px 13px;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: 17px;
+}
+
+.sn-hero h1 {
+  font-size: clamp(34px, 5vw, 48px);
+  line-height: 1.12;
+  letter-spacing: -1.2px;
+  color: #0f172a;
+  margin: 0 0 20px;
+}
+
+.sn-hero p {
+  font-size: 18px;
+  line-height: 1.75;
+  color: #475569;
+  margin-bottom: 18px;
+}
+
+/* INTRO CALCULATOR CTA */
+.sn-calculator-cta {
+  background: #0f172a;
+  color: #fff;
+  border-radius: 18px;
+  padding: 25px 27px;
+  margin: 28px 0 38px;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, .15);
+}
+
+.sn-calculator-cta p {
+  color: #e2e8f0;
+  margin: 0;
+}
+
+.sn-calculator-cta a {
+  color: #fff;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+/* HIGHLIGHT */
+.sn-highlight {
+  background: var(--sn-blue-bg);
+  border-left: 5px solid var(--sn-primary);
+  border-radius: 0 14px 14px 0;
+  padding: 20px 23px;
+  margin: 24px 0;
+}
+
+.sn-highlight p:last-child {
+  margin-bottom: 0;
+}
+
+/* GREEN BOX */
+.sn-success {
+  background: var(--sn-green-bg);
+  border: 1px solid #a7f3d0;
+  border-radius: var(--sn-radius);
+  padding: 22px 24px;
+  margin: 25px 0;
+}
+
+.sn-success p:last-child {
+  margin-bottom: 0;
+}
+
+/* PROCESS */
+.sn-process {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.sn-step {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--sn-border);
+  border-radius: 14px;
+  padding: 19px 14px;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, .05);
+}
+
+.sn-step-number {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background: var(--sn-primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.sn-step strong {
+  display: block;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+/* LIST */
+.sn-article ul,
+.sn-article ol {
+  padding-left: 25px;
+  margin: 14px 0 24px;
+}
+
+.sn-article li {
+  margin-bottom: 8px;
+}
+
+/* TABLE */
+.sn-table-wrap {
+  overflow-x: auto;
+  margin: 28px 0;
+  border: 1px solid var(--sn-border);
+  border-radius: 16px;
+  box-shadow: var(--sn-shadow);
+  background: #fff;
+}
+
+.sn-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+}
+
+.sn-table th {
+  background: #0f172a;
+  color: #fff;
+  text-align: left;
+  padding: 16px 18px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.sn-table td {
+  padding: 15px 18px;
+  border-bottom: 1px solid var(--sn-border);
+  vertical-align: top;
+}
+
+.sn-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.sn-table tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+/* QUOTE */
+.sn-question {
+  position: relative;
+  background: var(--sn-yellow-bg);
+  border: 1px solid #fde68a;
+  border-radius: 15px;
+  padding: 21px 23px 21px 28px;
+  margin: 25px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #78350f;
+}
+
+.sn-question:before {
+  content: "?";
+  position: absolute;
+  left: -13px;
+  top: 17px;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f59e0b;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+/* NUMBERED STEPS */
+.sn-numbered {
+  counter-reset: sn-counter;
+  padding: 0;
+  list-style: none !important;
+  margin-left: 0 !important;
+}
+
+.sn-numbered li {
+  counter-increment: sn-counter;
+  position: relative;
+  padding: 18px 18px 18px 61px;
+  margin-bottom: 12px;
+  background: #f8fafc;
+  border: 1px solid var(--sn-border);
+  border-radius: 14px;
+}
+
+.sn-numbered li:before {
+  content: counter(sn-counter);
+  position: absolute;
+  left: 17px;
+  top: 17px;
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  background: var(--sn-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+/* SUMMARY */
+.sn-summary {
+  background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+  border: 1px solid #bfdbfe;
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 45px;
+}
+
+.sn-summary h2 {
+  margin-top: 0;
+}
+
+.sn-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px 0;
+}
+
+.sn-flow span {
+  background: #fff;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  padding: 8px 13px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #1e3a8a;
+}
+
+.sn-flow b {
+  color: #64748b;
+}
+
+/* FAQ */
+.sn-faq {
+  margin-top: 30px;
+}
+
+.sn-faq details {
+  background: #fff;
+  border: 1px solid var(--sn-border);
+  border-radius: 13px;
+  margin-bottom: 11px;
+  overflow: hidden;
+  transition: .2s ease;
+}
+
+.sn-faq details[open] {
+  border-color: #bfdbfe;
+  box-shadow: 0 5px 20px rgba(37, 99, 235, .07);
+}
+
+.sn-faq summary {
+  cursor: pointer;
+  padding: 19px 21px;
+  font-weight: 800;
+  font-size: 16px;
+  color: #172033;
+  list-style: none;
+  position: relative;
+  padding-right: 50px;
+}
+
+.sn-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.sn-faq summary:after {
+  content: "+";
+  position: absolute;
+  right: 19px;
+  top: 14px;
+  font-size: 25px;
+  font-weight: 400;
+  color: var(--sn-primary);
+}
+
+.sn-faq details[open] summary:after {
+  content: "−";
+}
+
+.sn-faq-answer {
+  padding: 0 21px 20px;
+  color: #475569;
+}
+
+.sn-faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
+/* FINAL CTA */
+.sn-final-cta {
+  background: #0f172a;
+  color: #fff;
+  border-radius: 20px;
+  padding: 32px;
+  margin-top: 35px;
+  text-align: center;
+}
+
+.sn-final-cta h2 {
+  color: #fff;
+  margin-top: 0;
+}
+
+.sn-final-cta p {
+  color: #cbd5e1;
+}
+
+.sn-final-button {
+  display: inline-block;
+  background: #2563eb;
+  color: #fff !important;
+  padding: 13px 22px;
+  border-radius: 10px;
+  text-decoration: none !important;
+  font-weight: 800;
+  margin-top: 7px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 760px) {
+  .sn-article {
+    font-size: 16px;
+  }
+
+  .sn-hero {
+    padding: 30px 22px;
+    border-radius: 17px;
+  }
+
+  .sn-hero h1 {
+    font-size: 33px;
+  }
+
+  .sn-process {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sn-article h2 {
+    margin-top: 42px;
+  }
+
+  .sn-summary,
+  .sn-final-cta {
+    padding: 25px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sn-process {
+    grid-template-columns: 1fr;
+  }
+
+  .sn-flow {
+    display: block;
+    text-align: center;
+  }
+
+  .sn-flow span {
+    display: inline-block;
+    margin: 4px 2px;
+  }
+
+  .sn-flow b {
+    display: none;
+  }
+}
+</style>
+
+
+<article class="sn-article">
+
+  <!-- HERO -->
+  <header class="sn-hero">
+    <div class="sn-eyebrow">Guida 2026 • Stipendio Netto</div>
+
+    <h1>Come si Calcola lo Stipendio Netto nel 2026: RAL, IRPEF, INPS e Busta Paga</h1>
+
+    <p>
+      Quando si parla di <strong>stipendio netto</strong>, la cifra indicata nel
+      contratto di lavoro non coincide con quella che il dipendente riceve
+      effettivamente ogni mese.
+    </p>
+
+    <p>
+      Tra <strong>RAL (Retribuzione Annua Lorda)</strong>, contributi
+      <strong>INPS</strong>, imposta <strong>IRPEF</strong>, detrazioni fiscali
+      e addizionali regionali e comunali, il passaggio dallo stipendio lordo
+      al netto richiede diversi calcoli.
+    </p>
+  </header>
+
+
+  <!-- INTRO -->
+  <p>
+    Nel 2026, inoltre, le regole fiscali e le agevolazioni applicabili al lavoro
+    dipendente rendono ancora più importante utilizzare un calcolo aggiornato.
+  </p>
+
+  <div class="sn-question">
+    Quanto resta davvero in tasca di una RAL di 30.000 euro?
+  </div>
+
+  <p>
+    La risposta dipende non soltanto dalla RAL, ma anche dal tipo di contratto,
+    dalle mensilità, dalla residenza fiscale e dalla situazione personale del
+    lavoratore.
+  </p>
+
+  <div class="sn-calculator-cta">
+    <p>
+      Per ottenere una prima stima puoi utilizzare il nostro
+      <a href="https://stipendiocalcolatore.it/">stipendio netto calcolo</a>,
+      inserendo i dati richiesti per simulare il risultato.
+    </p>
+  </div>
+
+
+  <!-- SECTION 1 -->
+  <h2>RAL e stipendio netto: qual è la differenza?</h2>
+
+  <p>
+    La <strong>RAL</strong> è la Retribuzione Annua Lorda prevista dal rapporto
+    di lavoro. Rappresenta una delle principali componenti utilizzate per
+    descrivere lo stipendio, ma non corrisponde all'importo che il lavoratore
+    riceve sul conto corrente.
+  </p>
+
+  <p>Dal lordo devono essere considerate diverse voci:</p>
+
+  <ul>
+    <li>contributi previdenziali <strong>INPS</strong> a carico del lavoratore;</li>
+    <li><strong>IRPEF</strong>;</li>
+    <li>detrazioni fiscali;</li>
+    <li>addizionale regionale IRPEF;</li>
+    <li>addizionale comunale IRPEF;</li>
+    <li>eventuali agevolazioni o trattamenti fiscali;</li>
+    <li>numero di mensilità previste dal contratto collettivo.</li>
+  </ul>
+
+  <div class="sn-highlight">
+    <p>
+      Il risultato finale è lo <strong>stipendio netto</strong>, cioè l'importo
+      effettivamente corrisposto in busta paga.
+    </p>
+  </div>
+
+  <h3>In breve: RAL, lordo e netto sono la stessa cosa?</h3>
+
+  <p>
+    No. La RAL indica la retribuzione annua lorda prevista dal rapporto di lavoro.
+    Lo stipendio lordo mensile deriva dalla distribuzione della retribuzione
+    sulle mensilità previste, mentre lo stipendio netto è ciò che rimane dopo
+    contributi, imposte e altre trattenute applicabili.
+  </p>
+
+
+  <!-- SECTION 2 -->
+  <h2>Come si passa dalla RAL allo stipendio netto?</h2>
+
+  <p>
+    Il calcolo può essere rappresentato in modo semplificato attraverso questo
+    percorso:
+  </p>
+
+  <div class="sn-process">
+
+    <div class="sn-step">
+      <div class="sn-step-number">1</div>
+      <strong>RAL</strong>
+    </div>
+
+    <div class="sn-step">
+      <div class="sn-step-number">2</div>
+      <strong>Contributi INPS</strong>
+    </div>
+
+    <div class="sn-step">
+      <div class="sn-step-number">3</div>
+      <strong>Imponibile fiscale</strong>
+    </div>
+
+    <div class="sn-step">
+      <div class="sn-step-number">4</div>
+      <strong>IRPEF</strong>
+    </div>
+
+  </div>
+
+  <div class="sn-flow">
+    <span>RAL</span>
+    <b>→</b>
+    <span>INPS</span>
+    <b>→</b>
+    <span>Imponibile fiscale</span>
+    <b>→</b>
+    <span>IRPEF</span>
+    <b>→</b>
+    <span>Detrazioni</span>
+    <b>→</b>
+    <span>Addizionali</span>
+    <b>→</b>
+    <span>Netto</span>
+  </div>
+
+  <p>
+    Non esiste quindi una semplice percentuale universale da sottrarre alla RAL.
+  </p>
+
+  <p>Il risultato può cambiare in base a diversi elementi, tra cui:</p>
+
+  <ul>
+    <li>reddito complessivo;</li>
+    <li>aliquote e scaglioni IRPEF;</li>
+    <li>contributi previdenziali;</li>
+    <li>detrazione per lavoro dipendente;</li>
+    <li>regione di residenza;</li>
+    <li>comune di residenza;</li>
+    <li>numero di mensilità;</li>
+    <li>contratto collettivo nazionale di lavoro (<strong>CCNL</strong>);</li>
+    <li>tipologia di rapporto di lavoro;</li>
+    <li>eventuali familiari fiscalmente a carico.</li>
+  </ul>
+
+  <div class="sn-success">
+    <p>
+      Per questo motivo, due lavoratori con la stessa RAL possono avere un
+      <strong>netto mensile leggermente diverso</strong>.
+    </p>
+  </div>
+
+
+  <!-- TAXES -->
+  <h2>Quali tasse vengono sottratte dallo stipendio lordo?</h2>
+
+  <p>
+    Le principali componenti da considerare sono
+    <strong>contributi previdenziali</strong> e
+    <strong>imposte sul reddito</strong>.
+  </p>
+
+  <h3>Contributi INPS</h3>
+
+  <p>
+    I contributi <strong>INPS</strong> finanziano la previdenza e altre
+    prestazioni previste dal sistema previdenziale italiano.
+  </p>
+
+  <p>
+    Una parte dei contributi è a carico del lavoratore e viene trattenuta
+    direttamente dalla retribuzione.
+  </p>
+
+  <p>
+    L'aliquota effettiva non deve essere considerata identica per ogni lavoratore:
+    può dipendere dal settore, dal rapporto di lavoro e da specifiche condizioni
+    contributive.
+  </p>
+
+  <div class="sn-highlight">
+    <p>
+      Per questo un calcolatore affidabile dovrebbe utilizzare il profilo
+      contributivo appropriato invece di applicare automaticamente una
+      percentuale a qualsiasi RAL.
+    </p>
+  </div>
+
+  <h3>Cosa sono i contributi INPS?</h3>
+
+  <p>
+    Sono contributi previdenziali versati durante il rapporto di lavoro.
+    La quota a carico del dipendente viene normalmente trattenuta dalla
+    retribuzione e contribuisce alla determinazione del reddito imponibile fiscale.
+  </p>
+
+
+  <!-- IRPEF -->
+  <h2>IRPEF 2026: perché è importante per il calcolo del netto?</h2>
+
+  <p>
+    L'<strong>IRPEF</strong>, cioè l'Imposta sul Reddito delle Persone Fisiche,
+    rappresenta una delle principali imposte che incidono sul reddito del
+    lavoratore dipendente.
+  </p>
+
+  <p>Nel calcolo dello stipendio netto bisogna distinguere tra:</p>
+
+  <ul>
+    <li>reddito lordo;</li>
+    <li>contributi previdenziali;</li>
+    <li>imponibile fiscale;</li>
+    <li>IRPEF lorda;</li>
+    <li>detrazioni;</li>
+    <li>IRPEF effettivamente trattenuta.</li>
+  </ul>
+
+  <p>
+    Nel 2026 gli scaglioni IRPEF applicabili al reddito delle persone fisiche
+    prevedono, per le fasce considerate, aliquote del
+    <strong>23%, 33% e 43%</strong>.
+  </p>
+
+  <div class="sn-question">
+    Significa che chi supera una soglia paga l'aliquota più alta su tutto lo stipendio?
+  </div>
+
+  <p>
+    No. Questo è uno degli errori più comuni quando si cerca di capire l'IRPEF.
+  </p>
+
+  <p>
+    Il passaggio a uno scaglione superiore non significa che l'intero reddito
+    venga tassato con la nuova aliquota. L'imposta viene calcolata
+    progressivamente sulle diverse fasce di reddito.
+  </p>
+
+
+  <!-- DETRACTIONS -->
+  <h2>Detrazioni per lavoro dipendente</h2>
+
+  <p>
+    Dopo il calcolo dell'IRPEF lorda entrano in gioco le
+    <strong>detrazioni fiscali</strong>.
+  </p>
+
+  <p>
+    Per un lavoratore dipendente è particolarmente importante la
+    <strong>detrazione per lavoro dipendente</strong>, che può ridurre
+    l'imposta effettivamente dovuta.
+  </p>
+
+  <p>
+    L'importo della detrazione è collegato al reddito complessivo e alle
+    regole fiscali applicabili.
+  </p>
+
+  <div class="sn-highlight">
+    <p>
+      Questo significa che non basta conoscere soltanto la RAL per determinare
+      con precisione il netto.
+    </p>
+  </div>
+
+
+  <!-- CUNEO -->
+  <h2>Cuneo fiscale e stipendio netto</h2>
+
+  <p>
+    Un altro elemento importante nel 2026 è il <strong>cuneo fiscale</strong>.
+  </p>
+
+  <p>
+    Con questa espressione si fa riferimento alla differenza tra il costo
+    complessivo del lavoro sostenuto dal datore di lavoro e la retribuzione
+    netta percepita dal dipendente.
+  </p>
+
+  <p>
+    Le misure fiscali e contributive che incidono sul cuneo possono modificare
+    il risultato finale del calcolo per determinate fasce di reddito.
+  </p>
+
+  <p>
+    Per questo, quando si confronta uno stipendio netto 2026 con quello di un
+    anno precedente, non è sufficiente applicare semplicemente la stessa formula.
+  </p>
+
+
+  <!-- ADDIZIONALI -->
+  <h2>Addizionale regionale e comunale: perché la residenza conta?</h2>
+
+  <p>
+    Due persone con la stessa RAL e lo stesso contratto possono ricevere un
+    netto differente anche in funzione della
+    <strong>regione e del comune di residenza fiscale</strong>.
+  </p>
+
+  <p>
+    Questo dipende dalle <strong>addizionali IRPEF regionali e comunali</strong>.
+  </p>
+
+  <p>Nel calcolo possono quindi essere rilevanti:</p>
+
+  <ul>
+    <li>regione;</li>
+    <li>comune;</li>
+    <li>aliquota regionale;</li>
+    <li>aliquota comunale;</li>
+    <li>reddito imponibile;</li>
+    <li>eventuali regole locali applicabili.</li>
+  </ul>
+
+  <h3>Perché il comune di residenza può influenzare lo stipendio netto?</h3>
+
+  <p>
+    Perché oltre all'IRPEF nazionale possono essere applicate addizionali
+    regionali e comunali. Il loro importo contribuisce alla determinazione
+    delle trattenute fiscali complessive.
+  </p>
+
+
+  <!-- MENSILITA -->
+  <h2>13 o 14 mensilità: lo stipendio netto cambia?</h2>
+
+  <p>
+    Il numero di mensilità è un altro elemento da non confondere con la RAL.
+  </p>
+
+  <div class="sn-table-wrap">
+    <table class="sn-table">
+      <thead>
+        <tr>
+          <th>Mensilità</th>
+          <th>Cosa significa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>12 mensilità</strong></td>
+          <td>La retribuzione annuale viene distribuita su 12 pagamenti.</td>
+        </tr>
+        <tr>
+          <td><strong>13 mensilità</strong></td>
+          <td>È prevista una mensilità aggiuntiva, generalmente la tredicesima.</td>
+        </tr>
+        <tr>
+          <td><strong>14 mensilità</strong></td>
+          <td>Può essere prevista dal CCNL o dalle condizioni contrattuali.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    La <strong>tredicesima</strong> è generalmente prevista dalla contrattazione
+    collettiva o dal contratto applicabile. La
+    <strong>quattordicesima</strong> dipende invece dal CCNL e dalle condizioni
+    previste dal rapporto di lavoro.
+  </p>
+
+  <p>
+    Se la RAL annuale rimane invariata, distribuire la retribuzione su un
+    numero diverso di mensilità modifica l'importo medio delle singole mensilità.
+  </p>
+
+  <div class="sn-question">
+    Una RAL di 30.000 euro con 14 mensilità significa guadagnare di più?
+  </div>
+
+  <p>
+    Non necessariamente. Se la RAL è la stessa, il numero di mensilità determina
+    soprattutto come la retribuzione annuale viene distribuita nel corso dell'anno.
+  </p>
+
+
+  <!-- RAL 30K -->
+  <h2>Quanto è lo stipendio netto con una RAL di 30.000 euro?</h2>
+
+  <p>
+    Non esiste un unico risultato valido per tutti.
+  </p>
+
+  <p>
+    Per stimare il netto di una <strong>RAL di 30.000 euro</strong> bisogna
+    considerare almeno:
+  </p>
+
+  <ol class="sn-numbered">
+    <li>contributi previdenziali;</li>
+    <li>imponibile fiscale;</li>
+    <li>IRPEF;</li>
+    <li>detrazioni;</li>
+    <li>addizionale regionale;</li>
+    <li>addizionale comunale;</li>
+    <li>numero di mensilità;</li>
+    <li>caratteristiche del rapporto di lavoro.</li>
+  </ol>
+
+  <p>
+    Per questo è più corretto parlare di <strong>stima dello stipendio netto</strong>
+    piuttosto che utilizzare una percentuale fissa.
+  </p>
+
+  <p>Lo stesso principio vale per RAL di:</p>
+
+  <div class="sn-flow">
+    <span>€20.000</span>
+    <span>€25.000</span>
+    <span>€30.000</span>
+    <span>€35.000</span>
+    <span>€40.000</span>
+    <span>€50.000</span>
+    <span>€60.000</span>
+  </div>
+
+  <p>
+    Una tabella RAL → netto può essere utile per avere un riferimento rapido,
+    ma per una simulazione più precisa è preferibile inserire i dati personali
+    nel calcolatore.
+  </p>
+
+
+  <!-- CALCOLO -->
+  <h2>Come calcolare lo stipendio netto partendo dal lordo?</h2>
+
+  <p>
+    Il procedimento generale è:
+  </p>
+
+  <ol class="sn-numbered">
+
+    <li>
+      <strong>Determinare la retribuzione lorda</strong><br>
+      Si parte dalla RAL oppure dallo stipendio lordo mensile.
+    </li>
+
+    <li>
+      <strong>Calcolare i contributi previdenziali</strong><br>
+      Si determina la quota contributiva a carico del lavoratore in base alla
+      situazione previdenziale.
+    </li>
+
+    <li>
+      <strong>Determinare l'imponibile fiscale</strong><br>
+      Il reddito imponibile viene utilizzato per il calcolo dell'IRPEF.
+    </li>
+
+    <li>
+      <strong>Calcolare l'IRPEF lorda</strong><br>
+      Il reddito viene suddiviso negli scaglioni previsti dalla normativa.
+    </li>
+
+    <li>
+      <strong>Applicare le detrazioni</strong><br>
+      Le detrazioni spettanti riducono l'imposta.
+    </li>
+
+    <li>
+      <strong>Considerare le addizionali</strong><br>
+      Vengono considerate le addizionali regionali e comunali applicabili.
+    </li>
+
+    <li>
+      <strong>Determinare il netto</strong><br>
+      Dopo le diverse trattenute e gli eventuali benefici fiscali si arriva
+      all'importo netto.
+    </li>
+
+  </ol>
+
+
+  <!-- REVERSE -->
+  <h2>Da stipendio netto a RAL: come funziona?</h2>
+
+  <p>
+    Il calcolo inverso è altrettanto utile.
+  </p>
+
+  <div class="sn-question">
+    Quale RAL devo avere per arrivare a circa 2.000 euro netti al mese?
+  </div>
+
+  <p>
+    Non esiste una RAL universale perché il risultato dipende dalle stesse
+    variabili del calcolo lordo → netto.
+  </p>
+
+  <p>
+    Un calcolatore inverso può quindi partire dall'obiettivo di
+    <strong>netto mensile</strong> e stimare la RAL necessaria.
+  </p>
+
+  <p>Questo tipo di simulazione è particolarmente utile durante:</p>
+
+  <ul>
+    <li>colloqui di lavoro;</li>
+    <li>negoziazioni salariali;</li>
+    <li>cambi di contratto;</li>
+    <li>valutazione di un'offerta;</li>
+    <li>confronto tra due opportunità professionali.</li>
+  </ul>
+
+
+  <!-- CCNL -->
+  <h2>Stipendio netto e CCNL</h2>
+
+  <p>
+    Il <strong>CCNL (Contratto Collettivo Nazionale di Lavoro)</strong> può
+    essere importante per comprendere la struttura della retribuzione.
+  </p>
+
+  <p>
+    Il contratto collettivo può stabilire elementi come:
+  </p>
+
+  <ul>
+    <li>livelli di inquadramento;</li>
+    <li>minimi tabellari;</li>
+    <li>mensilità aggiuntive;</li>
+    <li>orario di lavoro;</li>
+    <li>maggiorazioni;</li>
+    <li>indennità;</li>
+    <li>regole relative a specifiche componenti della retribuzione.</li>
+  </ul>
+
+  <p>
+    Per questo è utile considerare il CCNL quando si vuole passare da una
+    semplice stima della RAL a una simulazione più vicina alla situazione reale.
+  </p>
+
+  <div class="sn-table-wrap">
+    <table class="sn-table">
+      <thead>
+        <tr>
+          <th>Esempi di CCNL</th>
+          <th>Settore</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CCNL Commercio</td>
+          <td>Commercio e servizi</td>
+        </tr>
+        <tr>
+          <td>CCNL Metalmeccanici</td>
+          <td>Industria metalmeccanica</td>
+        </tr>
+        <tr>
+          <td>CCNL Turismo</td>
+          <td>Turismo e ristorazione</td>
+        </tr>
+        <tr>
+          <td>CCNL Sanità</td>
+          <td>Settore sanitario</td>
+        </tr>
+        <tr>
+          <td>CCNL Logistica</td>
+          <td>Trasporto e logistica</td>
+        </tr>
+        <tr>
+          <td>CCNL Edilizia</td>
+          <td>Settore edile</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- PART TIME -->
+  <h2>Stipendio netto part-time</h2>
+
+  <p>
+    Nel lavoro <strong>part-time</strong>, la retribuzione è normalmente
+    proporzionata alla percentuale e all'orario previsto dal contratto.
+  </p>
+
+  <p>
+    Un part-time al 50%, ad esempio, non deve essere interpretato semplicemente
+    come "metà tasse".
+  </p>
+
+  <p>Il livello di reddito può modificare:</p>
+
+  <ul>
+    <li>IRPEF;</li>
+    <li>detrazioni;</li>
+    <li>contributi;</li>
+    <li>trattamento fiscale complessivo.</li>
+  </ul>
+
+  <div class="sn-success">
+    <p>
+      Per questo anche il calcolo dello stipendio netto part-time deve essere
+      effettuato sulla situazione specifica.
+    </p>
+  </div>
+
+
+  <!-- INFORMATION TABLE -->
+  <h2>Quali informazioni servono per un calcolo più preciso?</h2>
+
+  <p>
+    Per ottenere una simulazione più affidabile è utile conoscere:
+  </p>
+
+  <div class="sn-table-wrap">
+    <table class="sn-table">
+      <thead>
+        <tr>
+          <th>Dati</th>
+          <th>Perché è importante</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><strong>RAL</strong></td>
+          <td>Determina la retribuzione annua lorda.</td>
+        </tr>
+
+        <tr>
+          <td><strong>Stipendio lordo mensile</strong></td>
+          <td>Serve per il calcolo mensile.</td>
+        </tr>
+
+        <tr>
+          <td><strong>Mensilità</strong></td>
+          <td>Determina la distribuzione annuale.</td>
+        </tr>
+
+        <tr>
+          <td><strong>Regione</strong></td>
+          <td>Incide sulle addizionali.</td>
+        </tr>
+
+        <tr>
+          <td><strong>Comune</strong></td>
+          <td>Può incidere sull'addizionale comunale.</td>
+        </tr>
+
+        <tr>
+          <td><strong>Tipo di contratto</strong></td>
+          <td>Può modificare il trattamento contributivo e fiscale.</td>
+        </tr>
+
+        <tr>
+          <td><strong>CCNL</strong></td>
+          <td>Determina diverse condizioni contrattuali.</td>
+        </tr>
+
+        <tr>
+          <td><strong>Part-time</strong></td>
+          <td>Influisce sulla retribuzione.</td>
+        </tr>
+
+        <tr>
+          <td><strong>Familiari a carico</strong></td>
+          <td>Possono incidere sulle detrazioni.</td>
+        </tr>
+
+        <tr>
+          <td><strong>Anno fiscale</strong></td>
+          <td>Le regole possono cambiare nel tempo.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    Più informazioni vengono considerate, più la simulazione può essere vicina
+    alla situazione effettiva.
+  </p>
+
+
+  <!-- PAYSLIP -->
+  <h2>Calcolo stipendio netto 2026: cosa controllare nella busta paga?</h2>
+
+  <p>
+    Il calcolo online è una <strong>stima</strong>. Per verificare il risultato
+    reale bisogna confrontarlo con la <strong>busta paga</strong>.
+  </p>
+
+  <p>
+    Nel cedolino possono comparire diverse voci, tra cui:
+  </p>
+
+  <ul>
+    <li>retribuzione;</li>
+    <li>imponibile previdenziale;</li>
+    <li>contributi INPS;</li>
+    <li>imponibile fiscale;</li>
+    <li>IRPEF;</li>
+    <li>detrazioni;</li>
+    <li>addizionali;</li>
+    <li>trattamento integrativo, quando spettante;</li>
+    <li>altre trattenute;</li>
+    <li>netto da pagare.</li>
+  </ul>
+
+  <div class="sn-highlight">
+    <p>
+      La voce più importante per il lavoratore è generalmente il
+      <strong>netto da pagare</strong>, cioè l'importo effettivamente corrisposto.
+    </p>
+  </div>
+
+
+  <!-- FAQ -->
+  <h2>FAQ sul calcolo dello stipendio netto</h2>
+
+  <div class="sn-faq">
+
+    <details>
+      <summary>Come si calcola lo stipendio netto?</summary>
+      <div class="sn-faq-answer">
+        <p>
+          Lo stipendio netto si ottiene partendo dalla retribuzione lorda e
+          considerando contributi previdenziali, IRPEF, detrazioni, addizionali
+          regionali e comunali e gli eventuali trattamenti fiscali applicabili.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Quanto sono 30.000 euro di RAL netti?</summary>
+      <div class="sn-faq-answer">
+        <p>
+          Il netto di una RAL di 30.000 euro dipende da variabili come contributi,
+          detrazioni, regione, comune, contratto e numero di mensilità. Per questo
+          non esiste un unico netto valido per tutti.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Quanto sono 35.000 euro di RAL netti al mese?</summary>
+      <div class="sn-faq-answer">
+        <p>
+          La cifra mensile dipende dal profilo fiscale e contributivo del lavoratore
+          e dal numero di mensilità previste. Una simulazione personalizzata è più
+          precisa di una percentuale fissa.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Qual è la differenza tra RAL e stipendio netto?</summary>
+      <div class="sn-faq-answer">
+        <p>
+          La RAL è la retribuzione annua lorda, mentre lo stipendio netto è
+          l'importo che rimane dopo contributi, imposte e altre trattenute applicabili.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Quante tasse si pagano sullo stipendio?</summary>
+      <div class="sn-faq-answer">
+        <p>
+          Non esiste una percentuale unica. Il carico fiscale dipende dal reddito
+          imponibile, dagli scaglioni IRPEF, dalle detrazioni e dalle addizionali
+          applicabili.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>La regione cambia lo stipendio netto?</summary>
+      <div class="sn-faq-answer">
+        <p>
+          Sì, può farlo attraverso l'addizionale regionale IRPEF. Anche il comune
+          di residenza può incidere attraverso l'addizionale comunale.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>13 e 14 mensilità cambiano la RAL?</summary>
+      <div class="sn-faq-answer">
+        <p>
+          Non necessariamente. Se la RAL annuale rimane uguale, il numero di
+          mensilità modifica principalmente la distribuzione della retribuzione
+          durante l'anno.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Il part-time dimezza lo stipendio netto?</summary>
+      <div class="sn-faq-answer">
+        <p>
+          Non necessariamente. La retribuzione può essere proporzionata all'orario,
+          ma anche contributi, IRPEF e detrazioni influenzano il risultato finale.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Quale RAL serve per avere 2.000 euro netti al mese?</summary>
+      <div class="sn-faq-answer">
+        <p>
+          Dipende dalla situazione fiscale, contributiva, dal numero di mensilità,
+          dalla residenza e dal contratto. Per questo è preferibile utilizzare un
+          calcolo inverso netto → RAL.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Lo stipendio netto è uguale ogni mese?</summary>
+      <div class="sn-faq-answer">
+        <p>
+          Non sempre. Tredicesima, quattordicesima, conguagli fiscali, addizionali,
+          premi, assenze e altre componenti possono modificare l'importo ricevuto
+          in determinati mesi.
+        </p>
+      </div>
+    </details>
+
+  </div>
+
+
+  <!-- SUMMARY -->
+  <section class="sn-summary">
+
+    <h2>In sintesi</h2>
+
+    <p>
+      Il <strong>calcolo dello stipendio netto 2026</strong> non consiste
+      semplicemente nel sottrarre una percentuale dalla RAL.
+    </p>
+
+    <p>
+      Per ottenere una stima realistica bisogna collegare diversi elementi
+      del sistema italiano:
+    </p>
+
+    <div class="sn-flow">
+      <span>RAL</span>
+      <b>→</b>
+      <span>INPS</span>
+      <b>→</b>
+      <span>Imponibile fiscale</span>
+      <b>→</b>
+      <span>IRPEF</span>
+      <b>→</b>
+      <span>Detrazioni</span>
+      <b>→</b>
+      <span>Addizionali</span>
+      <b>→</b>
+      <span>Cuneo fiscale</span>
+      <b>→</b>
+      <span>Netto in busta paga</span>
+    </div>
+
+    <p>
+      A questi si possono aggiungere <strong>CCNL, livello di inquadramento,
+      mensilità, regione, comune, part-time e situazione familiare</strong>.
+    </p>
+
+    <p>
+      Per questo un buon calcolatore di stipendio netto dovrebbe permettere
+      di inserire le principali variabili e mostrare non soltanto il risultato
+      finale, ma anche <strong>come si arriva dal lordo al netto</strong>.
+    </p>
+
+    <p>
+      Se stai confrontando un'offerta di lavoro, negoziando una RAL o semplicemente
+      vuoi capire quanto riceverai ogni mese, partire dal netto desiderato e
+      verificare la RAL necessaria può essere utile quanto fare il percorso inverso.
+    </p>
+
+    <p>
+      <strong>
+        Calcolare il netto significa quindi capire realmente il valore economico
+        di una proposta di lavoro, non limitarsi alla cifra lorda indicata nel contratto.
+      </strong>
+    </p>
+
+  </section>
+
+
+  <!-- FINAL CTA -->
+  <section class="sn-final-cta">
+
+    <h2>Vuoi conoscere il tuo stipendio netto?</h2>
+
+    <p>
+      Inserisci la tua RAL e i principali dati del rapporto di lavoro per ottenere
+      una stima dello stipendio netto 2026.
+    </p>
+
+    <a class="sn-final-button" href="https://stipendiocalcolatore.it/">
+      Calcola il tuo stipendio netto
+    </a>
+
+  </section>
+
+</article>
